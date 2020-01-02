@@ -1,0 +1,10 @@
+.r-contents
+  - @informations.each do |information|
+    .small_content
+      .small_content_title
+        = simple_format(information.text)
+      .small_content_post{:style => "background-image: url(#{information.image});"}
+      .small_content_name
+        %span 投稿者
+        = information.user.nickname
+  = paginate(@informations)

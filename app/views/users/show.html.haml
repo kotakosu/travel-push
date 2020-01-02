@@ -1,0 +1,8 @@
+.contents.row
+  %p
+    = @nickname
+    さんの投稿一覧
+  - @informations.each do |information|
+    .content_post{:style => "background-image: url(#{information.image});"}
+      = simple_format(information.text)
+  = paginate(@informations)

@@ -1,0 +1,25 @@
+.r-contents {
+  float: right;
+  width:  1000px;
+  background-color: aquamarine;
+  .small_content{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(130, 110, 153);
+    &_title{
+      font-size: 30px;
+      text-align: center;
+      margin: 10px auto 0;
+    }
+    &_post {
+      margin: 10px auto 0;
+      width: 400px;
+      height: 300px;
+    }
+    &_name {
+      font-size: 20px;
+      text-align: right;
+      margin: 10px 20px 0px 10px;
+    }
+  }
+}
