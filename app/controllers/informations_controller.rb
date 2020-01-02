@@ -13,8 +13,15 @@ class InformationsController < ApplicationController
     Information.create(image: information_params[:image], text: information_params[:text], user_id: current_user.id)
   end
 
+  def destroy
+    information = Information.find(params[:id])
+    if information.user_id == current_user.id
+      information.destroy
+    end
+  end
+
   private
-  def tweet_params
+  def information_params
     params.permit(:image, :text)
   end
 

@@ -4,6 +4,9 @@
       .small_content_title
         = simple_format(information.text)
       .small_content_post{:style => "background-image: url(#{information.image});"}
+      - if user_signed_in? && current_user.id == information.user_id
+        %li
+        = link_to '削除', "/informations/#{information.id}", method: :delete
       .small_content_name
         %span 投稿者
         = information.user.nickname
