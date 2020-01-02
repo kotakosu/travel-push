@@ -20,6 +20,18 @@ class InformationsController < ApplicationController
     end
   end
 
+  def edit
+    @information = Information.find(params[:id])
+  end
+
+  def update
+    information = Information.find(params[:id])
+    if information.user_id == current_user.id
+      information.update(information_params)
+    end
+  end
+
+
   private
   def information_params
     params.permit(:image, :text)

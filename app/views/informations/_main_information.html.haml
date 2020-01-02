@@ -7,6 +7,8 @@
       - if user_signed_in? && current_user.id == information.user_id
         %li
         = link_to '削除', "/informations/#{information.id}", method: :delete
+        %li
+        = link_to '編集', "/informations/#{information.id}/edit", method: :get
       .small_content_name
         %span 投稿者
         = information.user.nickname
