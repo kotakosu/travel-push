@@ -1,3 +1,7 @@
+%header 
+  = render "informations/header"
+  = render "informations/menuber"
+
 .contents.row
   %p
     = @nickname
@@ -6,3 +10,5 @@
     .content_post{:style => "background-image: url(#{information.image});"}
       = simple_format(information.text)
   = paginate(@informations)
+%footer 
+  = render "informations/footer"

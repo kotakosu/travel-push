@@ -1,6 +1,6 @@
 class InformationsController < ApplicationController
   
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @informations = Information.includes(:user).page(params[:page]).per(5).order("created_at DESC")
@@ -13,8 +13,32 @@ class InformationsController < ApplicationController
     Information.create(image: information_params[:image], text: information_params[:text], user_id: current_user.id)
   end
 
+  def destroy
+    information = Information.find(params[:id])
+    if information.user_id == current_user.id
+      information.destroy
+    end
+  end
+
+  def edit
+    @information = Information.find(params[:id])
+  end
+
+  def show
+    @information = Information.find(params[:id])
+    @comments = @information.comments.includes(:user)
+  end
+
+  def update
+    information = Information.find(params[:id])
+    if information.user_id == current_user.id
+      information.update(information_params)
+    end
+  end
+
+
   private
-  def tweet_params
+  def information_params
     params.permit(:image, :text)
   end
 
