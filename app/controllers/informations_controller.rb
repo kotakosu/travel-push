@@ -1,6 +1,6 @@
 class InformationsController < ApplicationController
   
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @informations = Information.includes(:user).page(params[:page]).per(5).order("created_at DESC")
@@ -22,6 +22,11 @@ class InformationsController < ApplicationController
 
   def edit
     @information = Information.find(params[:id])
+  end
+
+  def show
+    @information = Information.find(params[:id])
+    @comments = @information.comments.includes(:user)
   end
 
   def update

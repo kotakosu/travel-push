@@ -1,3 +1,6 @@
+%header 
+  = render "header"
+  = render "menuber"
 .contents.row
   = form_tag("/informations/#{@information.id}", method: :patch ) do
     %h3
