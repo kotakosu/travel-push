@@ -6,7 +6,10 @@
     %h3
       投稿する
     %input{:name => "image", :placeholder => "Image Url", :type => "text"}/
-    %textarea{:cols => "30", :name => "text", :placeholder => "text", :rows => "10"}
+    %textarea{:cols => "30", :name => "text", :placeholder => "観光地名を入力して下さい", :rows => "5"}
+    %textarea{:cols => "50", :name => "position", :placeholder => "詳細を入力して下さい", :rows => "10"}
+    %input{:name => "image", :size => "30", :type => "file"}/
     %input{:type => "submit", :value => "SENT"}/
+   
 %footer 
   = render "footer"

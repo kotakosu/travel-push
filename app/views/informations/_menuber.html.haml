@@ -6,7 +6,9 @@
       %ul.user__info
       %li
         %a.btn{:href => "/"}TOPへ戻る
+      %li
         %a{:href => "/users/#{current_user.id}"} マイページ
+      %li
         = link_to "ログアウト", destroy_user_session_path, method: :delete
       %a.post{:href => "/informations/new"} 投稿する
   - else

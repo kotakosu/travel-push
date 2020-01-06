@@ -1,21 +1,54 @@
 .r-contents {
   float: right;
   width:  1000px;
-  background-color: aquamarine;
+  height: 4000px;
   .small_content{
-    width: 500px;
-    height: 500px;
-    background-color: rgb(130, 110, 153);
+    height: 750px;
+    background-color: #f5f5f5;
+    border: 2px solid #627295;
+    border-radius: 4px;
+    margin: 2em 0;
+    padding: 2em;
+    position: relative;
     &_title{
       font-size: 30px;
       text-align: center;
       margin: 10px auto 0;
+
     }
-    &_post {
-      margin: 10px auto 0;
-      width: 400px;
-      height: 300px;
+    &_image {
+      width: 1000px;
+      height: 350px;
       object-fit: cover;
+      padding: 10px 20px 0px 10px;
+      text-align: center;
+    }
+    &_text{
+        width: 900px;
+        height: 250px;
+        margin: 10px auto 0;
+    }
+    &_menu {
+      text-align: right;
+        li {
+          list-style: none;
+          display: block;
+          display: inline-block;
+          a {
+          padding: 0.5em 1em;
+          text-decoration: none;
+          background: #668ad8;/*ボタン色*/
+          color: #FFF;
+          border-bottom: solid 4px #627295;
+          border-radius: 3px;
+          }
+          
+        }
+        li a:active {
+          -webkit-transform: translateY(4px);
+          transform: translateY(4px);/*下に動く*/
+          border-bottom: none;/*線を消す*/
+          }
     }
     &_name {
       font-size: 20px;
@@ -23,4 +56,15 @@
       margin: 10px 20px 0px 10px;
     }
   }
+}
+
+.small_content::before {
+  background-color: #fff;
+  color: #627295;
+  content: "POINT";
+  font-weight: bold;
+  left: 1em;
+  padding: 0 .5em;
+  position: absolute;
+  top: -1em;
 }

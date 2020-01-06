@@ -10,7 +10,7 @@ class InformationsController < ApplicationController
   end
 
   def create
-    Information.create(image: information_params[:image], text: information_params[:text], user_id: current_user.id)
+    Information.create(image: information_params[:image], text: information_params[:text],position: information_params[:text], user_id: current_user.id)
   end
 
   def destroy
@@ -39,7 +39,7 @@ class InformationsController < ApplicationController
 
   private
   def information_params
-    params.permit(:image, :text)
+    params.permit(:image, :text, :position)
   end
 
   def move_to_index
@@ -50,7 +50,7 @@ end
 
   private
   def information_params
-    params.permit(:name, :image, :text)
+    params.permit(:name, :image, :text,:position)
   end
 
   def move_to_index

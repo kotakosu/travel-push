@@ -3,16 +3,21 @@
     .small_content
       .small_content_title
         = simple_format(information.text)
-      .small_content_post{style: "background-image: url(#{information.image});"}
-      %ul.more_list
-        %li
-        = link_to '詳細', "/informations/#{information.id}", method: :get
-      - if user_signed_in? && current_user.id == information.user_id
-        %li
-        = link_to '編集', "/informations/#{information.id}/edit", method: :get
-        %li
-        = link_to '削除', "/informations/#{information.id}", method: :delete
+      .small_content_image
+        %img{:src => "#{information.image}", :width => "500"}
+      .small_content_text
+        = simple_format(information.position)
+      .small_content_menu
+        %ul.more_list
+          %li
+            = link_to '詳細', "/informations/#{information.id}", method: :get
+          - if user_signed_in? && current_user.id == information.user_id
+            %li
+              = link_to '編集', "/informations/#{information.id}/edit", method: :get
+            %li
+              = link_to '削除', "/informations/#{information.id}", method: :delete
       .small_content_name
         %span 投稿者
         = information.user.nickname
   = paginate(@informations)
+-# .small_content_post{style: "background-image: url(#{information.image});"}
