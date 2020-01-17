@@ -1,17 +1,20 @@
 .menu_content
   - if user_signed_in?
-    .user_nav.grid-6
+    .use_name
       %span
-        = current_user.nickname
+      Traveler:
+      = current_user.nickname
+    .user_nav.grid-6
       %ul.user__info
       %li
-        %a.btn{:href => "/"}TOPへ戻る
+        %a.btn-box{:href => "/"}TOPへ戻る
       %li
-        %a{:href => "/users/#{current_user.id}"} マイページ
+        %a.btn-box{:href => "/users/#{current_user.id}"} マイページ
       %li
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-      %a.post{:href => "/informations/new"} 投稿する
+        = link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "btn-box"
+      %li
+        %a.btn-box{:href => "/informations/new"} 投稿する
   - else
-    .grid-6
-      = link_to "ログイン", new_user_session_path, class: 'post'
-      = link_to "新規登録", new_user_registration_path, class: 'post'
+    .user_nav.grid-6
+      = link_to "ログイン", new_user_session_path, class: 'post' ,class: "btn-box"
+      = link_to "新規登録", new_user_registration_path, class: 'post' ,class: "btn-box"

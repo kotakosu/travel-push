@@ -29,7 +29,8 @@
         margin: 10px auto 0;
     }
     &_menu {
-      text-align: right;
+      display: flex;
+      justify-content: space-between;
         li {
           list-style: none;
           display: block;
@@ -61,7 +62,7 @@
 .small_content::before {
   background-color: #fff;
   color: #627295;
-  content: "POINT";
+  content: "Travel Information";
   font-weight: bold;
   left: 1em;
   padding: 0 .5em;
