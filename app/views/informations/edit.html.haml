@@ -1,11 +1,36 @@
 %header 
   = render "header"
   = render "menuber"
-.contents.row
-  = form_tag("/informations/#{@information.id}", method: :patch ) do
-    %h3
-      編集する
-    %input{:autofocus => "true", :name => "image", :placeholder => "Image Url", :type => "text", :value => "#{@information.image}"}/
-    %textarea{:cols => "30", :name => "text", :placeholder => "text", :rows => "10"}= @information.text
-    %textarea{:cols => "30", :name => "position", :placeholder => "text", :rows => "10"}= @information.position
-    %input{:type => "submit", :value => "SENT"}/
+.content_title
+  %h3
+    編集
+.content_color
+  .iphone
+    .iphone-top
+      %span.camera
+      %span.sensor
+      %span.speaker
+    .top-bar
+    .iphone-screen
+      .contents.row
+        = form_tag("/informations/#{@information.id}", method: :patch ) do
+          %h3
+            観光地名
+          %textarea{:cols => "32", :name => "text", :placeholder => "text", :rows => "5"}= @information.text
+          %h3
+            観光地情報
+          %textarea{:cols => "32", :name => "position", :placeholder => "text", :rows => "10"}= @information.position
+          %h3
+            観光地写真
+          %input{:autofocus => "true", :name => "image", :placeholder => "Image Url", :type => "text", :value => "#{@information.image}"}/
+          %input{:type => "submit", :value => "SENT"}/
+    .buttons
+      %span.on-off
+      %span.sleep
+      %span.up
+      %span.down
+    .bottom-bar
+    .iphone-bottom
+      %span
+%footer 
+  = render "footer"

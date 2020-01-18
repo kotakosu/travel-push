@@ -1,15 +1,33 @@
 %header 
   = render "header"
   = render "menuber"
-.contents.row
-  = form_tag('/informations', method: :post) do
-    %h3
-      投稿する
-    %input{:name => "image", :placeholder => "Image Url", :type => "text"}/
-    %textarea{:cols => "30", :name => "text", :placeholder => "観光地名を入力して下さい", :rows => "5"}
-    %textarea{:cols => "50", :name => "position", :placeholder => "詳細を入力して下さい", :rows => "10"}
-    %input{:name => "image", :size => "30", :type => "file"}/
-    %input{:type => "submit", :value => "SENT"}/
-   
+.content_color
+  .iphone
+    .iphone-top
+      %span.camera
+      %span.sensor
+      %span.speaker
+    .top-bar
+    .iphone-screen
+      .contents.row
+        = form_tag('/informations', method: :post) do
+          %h3
+            観光地名
+          %textarea{:cols => "50", :name => "text", :placeholder => "観光地名を入力して下さい", :rows => "5"}
+          %h3
+            観光地情報
+          %textarea{:cols => "50", :name => "position", :placeholder => "詳細を入力して下さい", :rows => "10"}
+          %h3
+            観光地写真
+          %input{:cols => "50",  :name => "image", :placeholder => "Image Url", :type => "text",:rows => "5"}/
+          %input{:type => "submit", :value => "SENT"}/
+    .buttons
+      %span.on-off
+      %span.sleep
+      %span.up
+      %span.down
+    .bottom-bar
+    .iphone-bottom
+      %span
 %footer 
   = render "footer"

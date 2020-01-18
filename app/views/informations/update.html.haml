@@ -1,5 +1,26 @@
-.contents.row
-  .success
-    %h3
-      更新が完了しました。
-    %a.btn{:href => "/"} 投稿一覧へ戻る
+%header 
+  = render "header"
+  = render "menuber"
+.content_color
+.iphone
+  .iphone-top
+    %span.camera
+    %span.sensor
+    %span.speaker
+  .top-bar
+  .iphone-screen
+    .contents.row
+      .success
+      %h3
+        更新が完了しました。
+      %a.btn{:href => "/"} TOPへ戻る
+  .buttons
+    %span.on-off
+    %span.sleep
+    %span.up
+    %span.down
+  .bottom-bar
+  .iphone-bottom
+    %span
+%footer 
+  = render "footer"
