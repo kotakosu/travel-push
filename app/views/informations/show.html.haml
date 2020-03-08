@@ -1,24 +1,28 @@
 %header 
   = render "header"
   = render "menuber"
-.contents.row
-  .content_post{:style => "background-image: url(#{@information.image});"}
-    - if user_signed_in? && current_user.id == @information.user_id
+.contents_info
+  .content_post
+    .information_title
+      = simple_format(@information.text)
+  .content_image{:style => "background-image: url(#{@information.image});", :width => "500"}
+  .content_description
+    = simple_format(@information.position)
+      - if user_signed_in? && current_user.id == @information.user_id
       .more
         %ul.more_list
           %li
             = link_to '編集', "/informations/#{@information.id}/edit", method: :get
           %li
             = link_to '削除', "/informations/#{@information.id}", method: :delete
-    = simple_format(@information.text)
-    %span.name
-      %a{:href => "/users/#{@information.user.id}"}
-        %span 投稿者
-        = @information.user.nickname
+      %span.name
+        %a{:href => "/users/#{@information.user.id}"}
+          %span Traveler:
+          = @information.user.nickname
   .container
     - if current_user
       = form_tag("/informations/#{@information.id}/comments", method: :post) do
-        %textarea{:cols => "30", :name => "text", :placeholder => "コメントする", :rows => "2"}
+        %textarea{:cols => "90", :name => "text", :placeholder => "コメントする", :rows => "5"}
         %input{:type => "submit", :value => "SENT"}/
     .comments
       %h4 ＜コメント一覧＞
@@ -31,4 +35,3 @@
             = comment.text
 %footer 
   = render "footer"
-  
