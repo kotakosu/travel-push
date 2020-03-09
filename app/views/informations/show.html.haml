@@ -15,10 +15,10 @@
             = link_to '編集', "/informations/#{@information.id}/edit", method: :get
           %li
             = link_to '削除', "/informations/#{@information.id}", method: :delete
-      %span.name
-        %a{:href => "/users/#{@information.user.id}"}
-          %span Traveler:
-          = @information.user.nickname
+    %span.name
+      %a{:href => "/users/#{@information.user.id}"}
+        %span Traveler:
+        = @information.user.nickname
   .container
     - if current_user
       = form_tag("/informations/#{@information.id}/comments", method: :post) do
