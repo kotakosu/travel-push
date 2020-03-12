@@ -1,6 +1,6 @@
 # README
 
-# Pictweet DB設計
+# Travel Push!! DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
