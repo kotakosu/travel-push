@@ -1,7 +1,7 @@
 # README
 
 # Travel Push!!
-## 概要 
+- 概要 
   観光地情報をユーザーが投稿し、観光地情報を共有できるサービス
 ## 本番環境(デプロイ先 テストアカウント＆ID)
   URL:https://travel-push.herokuapp.com/
