@@ -4,8 +4,7 @@
 ## 概要 
   観光地情報をユーザーが投稿し、観光地情報を共有できるサービス
 ## 本番環境(デプロイ先 テストアカウント＆ID)
-  <URL:https://travel-push.herokuapp.com/>
-
+  URL:https://travel-push.herokuapp.com/  
   テストアカウント  
   ID a@a  
   PW 12345678  
