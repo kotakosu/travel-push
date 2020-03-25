@@ -19,8 +19,12 @@
           %textarea{:cols => "50", :name => "position", :placeholder => "詳細を入力して下さい", :rows => "10"}
           %h3
             観光地写真
+          %input{:name => "image", :type => "file"}/
           %input{:cols => "50",  :name => "image", :placeholder => "Image Url", :type => "text",:rows => "5"}/
           %input{:type => "submit", :value => "SENT"}/
+      .field
+      = form.label :image
+      = form.file_field :image, id: :information_image
     .buttons
       %span.on-off
       %span.sleep
